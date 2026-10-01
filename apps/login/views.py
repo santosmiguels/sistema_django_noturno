@@ -5,19 +5,19 @@ from django.contrib.auth.models import User
 # Create your views here.
 def login(request):
     if request.method == "POST":
-        username = request.POST.get('username', '').strip()
+        username = request.POST.get('username', '')
         password = request.POST.get('password', '')
-        User = authenticate(request,username=username,password=password)
+        User = authenticate(request, username=username, password=password)
 
         if User is not None:
             auth_login(request, User)
-            return redirect('./index.html')
+            return redirect('index')
         return render(request, 'login.html', {'error': "Nome do usuário ou senha inválidos."})
     return render(request, "login.html")
 
 def novo_usuario(request):
     if request.method == "POST":
-        username = request.POST.get('usernmae', '').strip()
+        username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         confirm_password = request.POST.get('confirm_password','')
 
