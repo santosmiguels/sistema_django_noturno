@@ -1,0 +1,35 @@
+{% extends 'base.crud.html' %}
+{% block title %}Novo paciente{% endblock %}
+{% block content %}
+<h1 class="mt-5">Cadastrar novo paciente</h1>
+<form>
+    <div class="row">
+        <div class="col-12" col-md-8 col-lg-6 mb-3>
+            <label for="nome" class="form-label">Nome do paciente:</label>
+            <input type="text" class="form-control" name="nome" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" col-md-8 col-lg-6 mb-3>
+            <label for="CPF" class="form-label">CPF:</label>
+            <input type="text" class="form-control" name="CPF" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mb-3">
+            <label for="email" class="form-label">E-mail:</label>
+            <input type="email" class="form-control" name="email">
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" class="form-control" name="telefone">
+        </div>
+        <div>
+            <label for="data_nascimento" class="form-label">Data de nascimento:</label>
+            <input type="date" class="form-control" name="data-nascimento">
+        </div>
+    </div>
+</form>
+{% endblock %}
