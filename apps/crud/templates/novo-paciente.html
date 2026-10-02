@@ -1,8 +1,11 @@
-{% extends 'base.crud.html' %}
+{% extends 'base-crud.html' %}
+{% load static %}
 {% block title %}Novo paciente{% endblock %}
 {% block content %}
-<h1 class="mt-5">Cadastrar novo paciente</h1>
-<form>
+<h1 class="mt-5">Cadastrar Novo Paciente</h1><hr>
+{% if erro %}<p>{{ error }}</p>{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
     <div class="row">
         <div class="col-12" col-md-8 col-lg-6 mb-3>
             <label for="nome" class="form-label">Nome do paciente:</label>
@@ -11,8 +14,8 @@
     </div>
     <div class="row">
         <div class="col-12" col-md-8 col-lg-6 mb-3>
-            <label for="CPF" class="form-label">CPF:</label>
-            <input type="text" class="form-control" name="CPF" required>
+            <label for="cpf" class="form-label">CPF:</label>
+            <input type="text" class="form-control" id="cpf" name="cpf" required>
         </div>
     </div>
     <div class="row">
@@ -24,7 +27,7 @@
     <div class="row">
         <div>
             <label for="telefone" class="form-label">Telefone:</label>
-            <input type="text" class="form-control" name="telefone">
+            <input type="text" class="form-control" id="telefone" name="telefone">
         </div>
         <div>
             <label for="data_nascimento" class="form-label">Data de nascimento:</label>
@@ -32,4 +35,5 @@
         </div>
     </div>
 </form>
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
